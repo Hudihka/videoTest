@@ -12,6 +12,7 @@
 		CE25CB0F2383E0AC001016EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB0D2383E0AC001016EE /* Main.storyboard */; };
 		CE25CB112383E0AE001016EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB102383E0AE001016EE /* Assets.xcassets */; };
 		CE25CB142383E0AE001016EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB122383E0AE001016EE /* LaunchScreen.storyboard */; };
+		CE25CB1C2383E296001016EE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB1B2383E296001016EE /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		CE25CB102383E0AE001016EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE25CB132383E0AE001016EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE25CB152383E0AE001016EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE25CB1B2383E296001016EE /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		CE25CB1D2383E3CF001016EE /* toniRayt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toniRayt.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,8 @@
 			children = (
 				CE25CB092383E0AC001016EE /* AppDelegate.swift */,
 				CE25CB0B2383E0AC001016EE /* ViewController.swift */,
+				CE25CB1B2383E296001016EE /* PlayerViewController.swift */,
+				CE25CB1D2383E3CF001016EE /* toniRayt.mp4 */,
 				CE25CB0D2383E0AC001016EE /* Main.storyboard */,
 				CE25CB102383E0AE001016EE /* Assets.xcassets */,
 				CE25CB122383E0AE001016EE /* LaunchScreen.storyboard */,
@@ -137,6 +142,7 @@
 			files = (
 				CE25CB0C2383E0AC001016EE /* ViewController.swift in Sources */,
 				CE25CB0A2383E0AC001016EE /* AppDelegate.swift in Sources */,
+				CE25CB1C2383E296001016EE /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
