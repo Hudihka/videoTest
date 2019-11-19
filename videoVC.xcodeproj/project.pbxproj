@@ -16,6 +16,8 @@
 		CE25CB212383EF0E001016EE /* plazma.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB202383EF0D001016EE /* plazma.mp4 */; };
 		CE25CB242383F7EC001016EE /* guano.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB222383F7EB001016EE /* guano.mp4 */; };
 		CE25CB252383F7EC001016EE /* toniRayt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB232383F7EC001016EE /* toniRayt.mp4 */; };
+		CE25CB27238411A0001016EE /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB26238411A0001016EE /* CustomVideoPlayer.swift */; };
+		CE25CB2923841565001016EE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB2823841565001016EE /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CE25CB202383EF0D001016EE /* plazma.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = plazma.mp4; sourceTree = "<group>"; };
 		CE25CB222383F7EB001016EE /* guano.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = guano.mp4; sourceTree = "<group>"; };
 		CE25CB232383F7EC001016EE /* toniRayt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toniRayt.mp4; sourceTree = "<group>"; };
+		CE25CB26238411A0001016EE /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
+		CE25CB2823841565001016EE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				CE25CB092383E0AC001016EE /* AppDelegate.swift */,
 				CE25CB0B2383E0AC001016EE /* ViewController.swift */,
 				CE25CB1B2383E296001016EE /* PlayerViewController.swift */,
+				CE25CB26238411A0001016EE /* CustomVideoPlayer.swift */,
+				CE25CB2823841565001016EE /* Extension.swift */,
 				CE25CB0D2383E0AC001016EE /* Main.storyboard */,
 				CE25CB102383E0AE001016EE /* Assets.xcassets */,
 				CE25CB122383E0AE001016EE /* LaunchScreen.storyboard */,
@@ -150,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE25CB2923841565001016EE /* Extension.swift in Sources */,
 				CE25CB0C2383E0AC001016EE /* ViewController.swift in Sources */,
+				CE25CB27238411A0001016EE /* CustomVideoPlayer.swift in Sources */,
 				CE25CB0A2383E0AC001016EE /* AppDelegate.swift in Sources */,
 				CE25CB1C2383E296001016EE /* PlayerViewController.swift in Sources */,
 			);
