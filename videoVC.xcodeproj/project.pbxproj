@@ -13,6 +13,7 @@
 		CE25CB112383E0AE001016EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB102383E0AE001016EE /* Assets.xcassets */; };
 		CE25CB142383E0AE001016EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB122383E0AE001016EE /* LaunchScreen.storyboard */; };
 		CE25CB1C2383E296001016EE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB1B2383E296001016EE /* PlayerViewController.swift */; };
+		CE25CB212383EF0E001016EE /* plazma.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB202383EF0D001016EE /* plazma.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +25,7 @@
 		CE25CB132383E0AE001016EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE25CB152383E0AE001016EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE25CB1B2383E296001016EE /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		CE25CB1D2383E3CF001016EE /* toniRayt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toniRayt.mp4; sourceTree = "<group>"; };
+		CE25CB202383EF0D001016EE /* plazma.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = plazma.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,7 @@
 		CE25CAFD2383E0AC001016EE = {
 			isa = PBXGroup;
 			children = (
+				CE25CB202383EF0D001016EE /* plazma.mp4 */,
 				CE25CB082383E0AC001016EE /* videoVC */,
 				CE25CB072383E0AC001016EE /* Products */,
 			);
@@ -60,7 +62,6 @@
 				CE25CB092383E0AC001016EE /* AppDelegate.swift */,
 				CE25CB0B2383E0AC001016EE /* ViewController.swift */,
 				CE25CB1B2383E296001016EE /* PlayerViewController.swift */,
-				CE25CB1D2383E3CF001016EE /* toniRayt.mp4 */,
 				CE25CB0D2383E0AC001016EE /* Main.storyboard */,
 				CE25CB102383E0AE001016EE /* Assets.xcassets */,
 				CE25CB122383E0AE001016EE /* LaunchScreen.storyboard */,
@@ -129,6 +130,7 @@
 			files = (
 				CE25CB142383E0AE001016EE /* LaunchScreen.storyboard in Resources */,
 				CE25CB112383E0AE001016EE /* Assets.xcassets in Resources */,
+				CE25CB212383EF0E001016EE /* plazma.mp4 in Resources */,
 				CE25CB0F2383E0AC001016EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQJFLL24MV;
+				DEVELOPMENT_TEAM = UDKVUYFRKW;
 				INFOPLIST_FILE = videoVC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQJFLL24MV;
+				DEVELOPMENT_TEAM = UDKVUYFRKW;
 				INFOPLIST_FILE = videoVC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

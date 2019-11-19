@@ -18,12 +18,12 @@ class PlayerViewController: AVPlayerViewController {
         playVideo()
     }
 
-    static func route(url: URL?) -> PlayerViewController? {
+    static func route(url: URL?) -> PlayerViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "PlayerViewController")
-        let controller = viewController as? PlayerViewController
+        let controller = viewController as! PlayerViewController
 
-        controller?.urlVideo = url
+        controller.urlVideo = url
 
         return controller
     }
