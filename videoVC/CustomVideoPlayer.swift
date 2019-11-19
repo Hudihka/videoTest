@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class CustomVideoPlayer: UIViewController {
 
@@ -14,21 +15,32 @@ class CustomVideoPlayer: UIViewController {
     @IBOutlet weak var videoView: VideoPlayerView!
 
     @IBOutlet weak var bacgroundView: UIView!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+//        addVolumeProgressView()
 
-//    static func route(index: Int) -> CustomVideoPlayer {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "CustomVideoPlayer")
-//        let controller = viewController as! CustomVideoPlayer
+//        let  audioSession = AVAudioSession.sharedInstance()
+//        let volume : Float = audioSession.outputVolume
 //
-//        return controller
-//    }
+//        print(volume)
+
+        let volumeView = MPVolumeView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+
+        volumeView.isHidden = false
+        volumeView.alpha = 1
+//
+        view.addSubview(volumeView)
+
+    }
+
+
+
+    deinit {
+        print("deinit")
+    }
+
 
 }

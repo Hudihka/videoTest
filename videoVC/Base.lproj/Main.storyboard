@@ -58,9 +58,7 @@
                                     <color key="titleShadowColor" red="0.83529411760000005" green="0.35294117650000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kTw-tU-Oha"/>
-                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ffY-8b-wdG"/>
-                                    <segue destination="FIM-tT-cNe" kind="push" id="abw-xh-ygJ"/>
+                                    <segue destination="FIM-tT-cNe" kind="push" id="9KK-qv-yKo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,6 +98,10 @@
                                             <constraint firstAttribute="height" constant="150" id="TcC-Og-3Rs"/>
                                         </constraints>
                                     </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="teC-1o-vR5">
+                                        <rect key="frame" x="148" y="123" width="118" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -107,19 +109,13 @@
                                     <constraint firstAttribute="bottom" secondItem="mvR-gh-zyq" secondAttribute="bottom" constant="15" id="MnG-Iz-YN3"/>
                                 </constraints>
                             </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I7W-aG-7G3">
-                                <rect key="frame" x="16" y="85" width="343" height="2"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="I7W-aG-7G3" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" constant="21" id="0jQ-vI-KX8"/>
-                            <constraint firstItem="I7W-aG-7G3" firstAttribute="leading" secondItem="yUG-5o-HkL" secondAttribute="leadingMargin" id="6rN-sb-eBA"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="bottom" secondItem="CEU-pC-sU7" secondAttribute="bottom" id="7eE-Ib-Ta6"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" id="CVX-6G-pnu"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="leading" secondItem="CEU-pC-sU7" secondAttribute="leading" id="fED-Dz-DBB"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="trailing" secondItem="CEU-pC-sU7" secondAttribute="trailing" id="oHP-ug-cbT"/>
-                            <constraint firstItem="I7W-aG-7G3" firstAttribute="trailing" secondItem="yUG-5o-HkL" secondAttribute="trailingMargin" id="vAu-Hk-SS2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEU-pC-sU7"/>
                     </view>
