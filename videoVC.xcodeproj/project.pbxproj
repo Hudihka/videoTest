@@ -14,6 +14,8 @@
 		CE25CB142383E0AE001016EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB122383E0AE001016EE /* LaunchScreen.storyboard */; };
 		CE25CB1C2383E296001016EE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB1B2383E296001016EE /* PlayerViewController.swift */; };
 		CE25CB212383EF0E001016EE /* plazma.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB202383EF0D001016EE /* plazma.mp4 */; };
+		CE25CB242383F7EC001016EE /* guano.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB222383F7EB001016EE /* guano.mp4 */; };
+		CE25CB252383F7EC001016EE /* toniRayt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB232383F7EC001016EE /* toniRayt.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CE25CB152383E0AE001016EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE25CB1B2383E296001016EE /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CE25CB202383EF0D001016EE /* plazma.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = plazma.mp4; sourceTree = "<group>"; };
+		CE25CB222383F7EB001016EE /* guano.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = guano.mp4; sourceTree = "<group>"; };
+		CE25CB232383F7EC001016EE /* toniRayt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toniRayt.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		CE25CAFD2383E0AC001016EE = {
 			isa = PBXGroup;
 			children = (
+				CE25CB222383F7EB001016EE /* guano.mp4 */,
+				CE25CB232383F7EC001016EE /* toniRayt.mp4 */,
 				CE25CB202383EF0D001016EE /* plazma.mp4 */,
 				CE25CB082383E0AC001016EE /* videoVC */,
 				CE25CB072383E0AC001016EE /* Products */,
@@ -131,6 +137,8 @@
 				CE25CB142383E0AE001016EE /* LaunchScreen.storyboard in Resources */,
 				CE25CB112383E0AE001016EE /* Assets.xcassets in Resources */,
 				CE25CB212383EF0E001016EE /* plazma.mp4 in Resources */,
+				CE25CB242383F7EC001016EE /* guano.mp4 in Resources */,
+				CE25CB252383F7EC001016EE /* toniRayt.mp4 in Resources */,
 				CE25CB0F2383E0AC001016EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

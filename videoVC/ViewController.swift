@@ -16,16 +16,34 @@ class ViewController: UIViewController {
     }
 
     @IBAction func playVideo(_ sender: Any) {
-        //        let url = Bundle.main.url(forResource:"toniRayt", withExtension: ".mp4")
-
         if let path = Bundle.main.path(forResource: "plazma", ofType: "mp4") {
             let url = URL(fileURLWithPath: path)
-            let vc = PlayerViewController.route(url: url)
+            let vc = PlayerViewController.route(url: url, urlArray: nil)
 
             self.present(vc, animated: true, completion: nil)
         }
 
     }
+
+    @IBAction func playAll(_ sender: Any) {
+
+        let arrayName = ["guano", "toniRayt", "plazma"]
+        var arrayUrl = [URL]()
+
+        for obj in arrayName {
+            if let path = Bundle.main.path(forResource: obj, ofType: "mp4") {
+                let url = URL(fileURLWithPath: path)
+                arrayUrl.append(url)
+            }
+        }
+
+        let vc = PlayerViewController.route(url: nil, urlArray: arrayUrl)
+
+        self.present(vc, animated: true, completion: nil)
+
+
+    }
+
 
 }
 
