@@ -12,10 +12,16 @@ import AVKit
 class PlayerViewController: AVPlayerViewController {
     var urlVideo: URL?
 
+    var orientationLock = UIInterfaceOrientationMask.all
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         playVideo()
+    }
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return self.orientationLock
     }
 
     static func route(url: URL?) -> PlayerViewController {
