@@ -18,6 +18,9 @@
 		CE25CB252383F7EC001016EE /* toniRayt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB232383F7EC001016EE /* toniRayt.mp4 */; };
 		CE25CB27238411A0001016EE /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB26238411A0001016EE /* CustomVideoPlayer.swift */; };
 		CE25CB2923841565001016EE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB2823841565001016EE /* Extension.swift */; };
+		CE25CB2B23841BE4001016EE /* ManagerUrlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB2A23841BE4001016EE /* ManagerUrlFile.swift */; };
+		CE25CB2F23842382001016EE /* VideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB2E23842382001016EE /* VideoPlayerView.xib */; };
+		CE25CB31238423A0001016EE /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB30238423A0001016EE /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		CE25CB232383F7EC001016EE /* toniRayt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toniRayt.mp4; sourceTree = "<group>"; };
 		CE25CB26238411A0001016EE /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		CE25CB2823841565001016EE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		CE25CB2A23841BE4001016EE /* ManagerUrlFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerUrlFile.swift; sourceTree = "<group>"; };
+		CE25CB2E23842382001016EE /* VideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayerView.xib; sourceTree = "<group>"; };
+		CE25CB30238423A0001016EE /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,13 +79,32 @@
 				CE25CB0B2383E0AC001016EE /* ViewController.swift */,
 				CE25CB1B2383E296001016EE /* PlayerViewController.swift */,
 				CE25CB26238411A0001016EE /* CustomVideoPlayer.swift */,
-				CE25CB2823841565001016EE /* Extension.swift */,
+				CE25CB2D2384230C001016EE /* Views */,
+				CE25CB2C23841BEE001016EE /* Managers */,
 				CE25CB0D2383E0AC001016EE /* Main.storyboard */,
 				CE25CB102383E0AE001016EE /* Assets.xcassets */,
 				CE25CB122383E0AE001016EE /* LaunchScreen.storyboard */,
 				CE25CB152383E0AE001016EE /* Info.plist */,
 			);
 			path = videoVC;
+			sourceTree = "<group>";
+		};
+		CE25CB2C23841BEE001016EE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CE25CB2823841565001016EE /* Extension.swift */,
+				CE25CB2A23841BE4001016EE /* ManagerUrlFile.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CE25CB2D2384230C001016EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE25CB2E23842382001016EE /* VideoPlayerView.xib */,
+				CE25CB30238423A0001016EE /* VideoPlayerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +170,7 @@
 				CE25CB212383EF0E001016EE /* plazma.mp4 in Resources */,
 				CE25CB242383F7EC001016EE /* guano.mp4 in Resources */,
 				CE25CB252383F7EC001016EE /* toniRayt.mp4 in Resources */,
+				CE25CB2F23842382001016EE /* VideoPlayerView.xib in Resources */,
 				CE25CB0F2383E0AC001016EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,10 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE25CB2923841565001016EE /* Extension.swift in Sources */,
+				CE25CB2B23841BE4001016EE /* ManagerUrlFile.swift in Sources */,
 				CE25CB0C2383E0AC001016EE /* ViewController.swift in Sources */,
 				CE25CB27238411A0001016EE /* CustomVideoPlayer.swift in Sources */,
 				CE25CB0A2383E0AC001016EE /* AppDelegate.swift in Sources */,
 				CE25CB1C2383E296001016EE /* PlayerViewController.swift in Sources */,
+				CE25CB31238423A0001016EE /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

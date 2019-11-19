@@ -13,49 +13,42 @@ class PlayerViewController: AVPlayerViewController {
 
     var urlVideo: URL?
 
-    //если видео несколько
-    var urlVideoArray: [URL]?
-    var playInfdex = 0
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let urlVideo = self.urlVideo{
-            playVideo(url: urlVideo)
-        } else if let array = urlVideoArray {
-            self.showsPlaybackControls = false
-            openArray(urlArray: array)
-        }
+        playVideo()
 
     }
 
-//    var orientationLock = UIInterfaceOrientationMask.all
-
-//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//        return self.orientationLock
-//    }
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.all
+    }
 
 //    override open var supportedInterfaceOrientations : UIInterfaceOrientationMask{
 //        return .all
 //    }
 
 
-    static func route(url: URL?, urlArray: [URL]?, index: Int = 0) -> PlayerViewController {
+    static func route(index: Int) -> PlayerViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "PlayerViewController")
         let controller = viewController as! PlayerViewController
 
-        controller.urlVideo = url
-        controller.urlVideoArray = urlArray
-        controller.playInfdex = index
+        let manager = ManagerUrlFile.shared.URLFile
+
+        if index < manager.count {
+            controller.urlVideo = manager[index]
+        }
 
         return controller
     }
 
-    private func playVideo(url: URL) {
-        let player = AVPlayer(url: url)
-        self.player = player
-        player.play()
+    private func playVideo() {
+        if let url = urlVideo {
+            let player = AVPlayer(url: url)
+            self.player = player
+            player.play()
+        }
     }
 
     private func openArray(urlArray: [URL]) {
@@ -73,7 +66,4 @@ class PlayerViewController: AVPlayerViewController {
 }
 
 
-extension PlayerViewController: AVPlayerViewControllerDelegate{
-
-}
 

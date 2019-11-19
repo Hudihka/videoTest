@@ -10,6 +10,12 @@ import UIKit
 
 class CustomVideoPlayer: UIViewController {
 
+    let videoManager = ManagerUrlFile.shared
+    @IBOutlet weak var videoView: VideoPlayerView!
+
+    @IBOutlet weak var bacgroundView: UIView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +23,12 @@ class CustomVideoPlayer: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    static func route(index: Int) -> CustomVideoPlayer {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "CustomVideoPlayer")
+//        let controller = viewController as! CustomVideoPlayer
+//
+//        return controller
+//    }
 
 }

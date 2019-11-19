@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="53" id="Wzp-1L-upE"/>
                                     <constraint firstAttribute="width" constant="106" id="cYH-xW-Qt1"/>
                                 </constraints>
-                                <state key="normal" title="Play ALL">
+                                <state key="normal" title="Play index">
                                     <color key="titleShadowColor" red="0.83529411760000005" green="0.35294117650000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -47,12 +47,30 @@
                                     <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bwD-iU-fQo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyh-01-2cL">
+                                <rect key="frame" x="134.5" y="221" width="106" height="53"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="1" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="1cD-AN-E44"/>
+                                    <constraint firstAttribute="width" constant="106" id="W8a-bK-7Cq"/>
+                                </constraints>
+                                <state key="normal" title="Play ALL">
+                                    <color key="titleShadowColor" red="0.83529411760000005" green="0.35294117650000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kTw-tU-Oha"/>
+                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ffY-8b-wdG"/>
+                                    <segue destination="FIM-tT-cNe" kind="push" id="abw-xh-ygJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WgK-ih-BhJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1Ol-5r-CQg"/>
                             <constraint firstItem="gpk-my-zYF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EBE-RQ-IUs"/>
+                            <constraint firstItem="Wyh-01-2cL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HzA-KT-HQp"/>
                             <constraint firstItem="gpk-my-zYF" firstAttribute="top" secondItem="WgK-ih-BhJ" secondAttribute="bottom" constant="63" id="Pv5-RE-Hy4"/>
+                            <constraint firstItem="WgK-ih-BhJ" firstAttribute="top" secondItem="Wyh-01-2cL" secondAttribute="bottom" constant="65" id="Y98-Om-sSU"/>
                             <constraint firstItem="WgK-ih-BhJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mYr-nU-x9T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -63,20 +81,57 @@
             </objects>
             <point key="canvasLocation" x="285.60000000000002" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Video Player-->
         <scene sceneID="6TY-XP-5oo">
             <objects>
-                <viewController id="FIM-tT-cNe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomVideoPlayer" id="FIM-tT-cNe" customClass="CustomVideoPlayer" customModule="videoVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yUG-5o-HkL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNl-Jv-UUc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvR-gh-zyq" customClass="VideoPlayerView" customModule="videoVC" customModuleProvider="target">
+                                        <rect key="frame" x="52.5" y="438" width="270" height="150"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="30t-g0-Foa"/>
+                                            <constraint firstAttribute="height" constant="150" id="TcC-Og-3Rs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mvR-gh-zyq" firstAttribute="centerX" secondItem="BNl-Jv-UUc" secondAttribute="centerX" id="0Zq-5f-FQH"/>
+                                    <constraint firstAttribute="bottom" secondItem="mvR-gh-zyq" secondAttribute="bottom" constant="15" id="MnG-Iz-YN3"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I7W-aG-7G3">
+                                <rect key="frame" x="16" y="85" width="343" height="2"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I7W-aG-7G3" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" constant="21" id="0jQ-vI-KX8"/>
+                            <constraint firstItem="I7W-aG-7G3" firstAttribute="leading" secondItem="yUG-5o-HkL" secondAttribute="leadingMargin" id="6rN-sb-eBA"/>
+                            <constraint firstItem="BNl-Jv-UUc" firstAttribute="bottom" secondItem="CEU-pC-sU7" secondAttribute="bottom" id="7eE-Ib-Ta6"/>
+                            <constraint firstItem="BNl-Jv-UUc" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" id="CVX-6G-pnu"/>
+                            <constraint firstItem="BNl-Jv-UUc" firstAttribute="leading" secondItem="CEU-pC-sU7" secondAttribute="leading" id="fED-Dz-DBB"/>
+                            <constraint firstItem="BNl-Jv-UUc" firstAttribute="trailing" secondItem="CEU-pC-sU7" secondAttribute="trailing" id="oHP-ug-cbT"/>
+                            <constraint firstItem="I7W-aG-7G3" firstAttribute="trailing" secondItem="yUG-5o-HkL" secondAttribute="trailingMargin" id="vAu-Hk-SS2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CEU-pC-sU7"/>
                     </view>
+                    <navigationItem key="navigationItem" id="adT-aD-hUZ"/>
+                    <connections>
+                        <outlet property="bacgroundView" destination="BNl-Jv-UUc" id="pHc-nT-5QI"/>
+                        <outlet property="videoView" destination="mvR-gh-zyq" id="fjD-Sb-8ih"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG2-LG-zIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="144"/>
+            <point key="canvasLocation" x="1236" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bcw-rd-bB1">
@@ -97,7 +152,7 @@
         <!--AV Player View Controller-->
         <scene sceneID="OaC-eD-KaO">
             <objects>
-                <avPlayerViewController storyboardIdentifier="PlayerViewController" videoGravity="AVLayerVideoGravityResizeAspect" id="U6X-31-Tab" customClass="PlayerViewController" customModule="GinzaGO" customModuleProvider="target" sceneMemberID="viewController"/>
+                <avPlayerViewController storyboardIdentifier="PlayerViewController" videoGravity="AVLayerVideoGravityResizeAspect" id="U6X-31-Tab" customClass="PlayerViewController" customModule="videoVC" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83V-6e-hZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286" y="881"/>
