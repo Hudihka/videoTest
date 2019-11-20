@@ -94,9 +94,6 @@ class CustomVideoPlayer: UIViewController {
         _ = player?.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
             guard let currentItem = self?.player?.currentItem else {return}
 
-                        print("max duration \(currentItem.duration.seconds)")
-                        print("seconds \(currentItem.currentTime().seconds)")
-
             let curentTime = currentItem.currentTime().seconds
             let maxTime = currentItem.duration.seconds
 
@@ -125,6 +122,14 @@ class CustomVideoPlayer: UIViewController {
 
 
 extension CustomVideoPlayer: PlayerDelegate {
+    func startSliderdraging(_ value: Bool) {
+        if value {
+            self.player?.pause()
+        } else {
+            self.player?.play()
+        }
+    }
+
     func playPayse(_ pressPause: Bool) {
         if pressPause {
             self.player?.pause()
@@ -139,13 +144,21 @@ extension CustomVideoPlayer: PlayerDelegate {
 
     func slider(_ value: Float) {
 
+        print("движение")
+
         guard let player = self.player,
               let duration = player.currentItem?.duration else {return}
 
         let newTime = Float(duration.value) * value
-        let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
+
+        print(value)
+        print(newTime)
+
+
+        let time: CMTime = CMTimeMake(value: Int64(newTime), timescale: 1000)
 
         player.seek(to: time)
+
 
 //        if newTime < (CMTimeGetSeconds(duration) - 5.0) {
 //            let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)

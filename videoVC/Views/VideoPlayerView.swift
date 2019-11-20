@@ -12,6 +12,7 @@ protocol PlayerDelegate: class{
     func playPayse(_ pressPause: Bool)
     func switched(_ next: Bool)
     func slider(_ value: Float)
+    func startSliderdraging(_ value: Bool)
 }
 
 class VideoPlayerView: UIView {
@@ -40,6 +41,8 @@ class VideoPlayerView: UIView {
         self.conteinerView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
         self.conteinerView.addRadius(number: 20)
         self.updateUI(curentTime: 0, maxTime: 0)
+
+        addGestureSlider()
     }
 
 
@@ -96,6 +99,24 @@ class VideoPlayerView: UIView {
 
         self.labelTime.text = strCurent + " / " + strMax
 
+    }
+
+    //MARK: - Slider gestures
+
+    private func addGestureSlider(){
+
+        self.slider.addTarget(self, action: #selector(startDraging), for: .touchDown)
+        self.slider.addTarget(self, action: #selector(dragEndedForSlider), for: .touchUpInside)
+
+    }
+
+
+    @objc func startDraging(){
+        self.delegate?.startSliderdraging(true)
+    }
+
+    @objc func dragEndedForSlider(){
+        self.delegate?.startSliderdraging(false)
     }
 
 
