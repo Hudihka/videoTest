@@ -23,9 +23,8 @@ class CustomVideoPlayer: UIViewController {
     //громкость
     var timer: Timer? = nil
     var time: Float = 0
-    var flagUpdateProgressView = false
+    var flagUpdateProgressView = true
     var activeTimer = true
-    var firstPlay = true
 
     //видео
 
@@ -59,13 +58,11 @@ class CustomVideoPlayer: UIViewController {
         listenVolumeButton()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        firstPlay = false
-    }
 
 
     func initVideoLauer(){
         if !videoManagerURL.isEmpty{
+            flagUpdateProgressView = true
             self.player = AVPlayer(url: urlVideo)
             player?.currentItem?.addObserver(self, forKeyPath: "duration", options: [.new, .initial], context: nil)
             addTimeObserver()
@@ -83,6 +80,10 @@ class CustomVideoPlayer: UIViewController {
             }
 
             self.player?.play()
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.flagUpdateProgressView = false
+            }
         }
     }
 
@@ -96,16 +97,15 @@ class CustomVideoPlayer: UIViewController {
                         print("max duration \(currentItem.duration.seconds)")
                         print("seconds \(currentItem.currentTime().seconds)")
 
-            self?.videoView.updateUI(curentTime: currentItem.currentTime().seconds, maxTime: currentItem.duration.seconds)
+            let curentTime = currentItem.currentTime().seconds
+            let maxTime = currentItem.duration.seconds
 
+            self?.videoView.updateUI(curentTime: curentTime, maxTime: maxTime)
 
+            if curentTime == maxTime {
+                self?.nextTrack(true)
+            }
 
-//            print("max duration \(currentItem.duration.seconds)")
-//            print("seconds \(currentItem.currentTime().seconds)")
-//            self?.timeSlider.maximumValue = Float(currentItem.duration.seconds)
-//            self?.timeSlider.minimumValue = 0
-//            self?.timeSlider.value = Float(currentItem.currentTime().seconds)
-//            self?.currentTimeLabel.text = self?.getTimeString(from: currentItem.currentTime())
         })
     }
 
@@ -134,6 +134,29 @@ extension CustomVideoPlayer: PlayerDelegate {
     }
 
     func switched(_ next: Bool) {
+        self.nextTrack(next)
+    }
+
+    func slider(_ value: Float) {
+
+        guard let player = self.player,
+              let duration = player.currentItem?.duration else {return}
+
+        let newTime = Float(duration.value) * value
+        let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
+
+        player.seek(to: time)
+
+//        if newTime < (CMTimeGetSeconds(duration) - 5.0) {
+//            let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
+//            player.seek(to: time)
+//        }
+
+    }
+
+
+    func nextTrack(_ next: Bool){
+
         if counter == 0 && !next{
             return
         } else if counter == videoManagerURL.count - 1 && next {
@@ -146,10 +169,6 @@ extension CustomVideoPlayer: PlayerDelegate {
             initVideoLauer()
 
         }
-    }
-
-    func slider(_ value: Float) {
-        ////
     }
 
 
