@@ -9,6 +9,15 @@
 import UIKit
 import MediaPlayer
 
+enum UpdateVolume{
+    case nowClear  //сейчас прозрачная
+    case nowShaded //сейчас цветная
+    case update    //идет анимация
+}
+
+
+
+
 class CustomVideoPlayer: UIViewController {
 
     let videoManager = ManagerUrlFile.shared
@@ -19,6 +28,7 @@ class CustomVideoPlayer: UIViewController {
 
     @IBOutlet weak var volumeView: UIProgressView!
     let audioSession = AVAudioSession.sharedInstance()
+    private var flagClearProgressView: UpdateVolume = .nowClear
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +64,17 @@ class CustomVideoPlayer: UIViewController {
         colorProgressView(true)
     }
 
+    private func animateVolumeView(_ newValue: UpdateVolume){
+        flagClearProgressView = .update
+
+        UIView.animate(withDuration: 0.2, animations: {
+
+            self.colorProgressView(newValue == .nowClear)
+        }) { (coml) in
+            self.flagClearProgressView = newValue
+        }
+    }
+
     private func colorProgressView(_ clear: Bool){
 
         let progress = clear ? UIColor.clear : UIColor.white
@@ -78,11 +99,29 @@ class CustomVideoPlayer: UIViewController {
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
+        if self.flagClearProgressView == .nowClear {
+            animateVolumeView(.nowShaded)
+        } else if self.flagClearProgressView != .update {
+            self.flagClearProgressView = .update
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+                self.animateVolumeView(.nowClear)
+            }
+        }
+
+
         if keyPath == "outputVolume"{
             let volume = (change?[NSKeyValueChangeKey.newKey] as! NSNumber).floatValue
 
             let valueVolume = Float(volume.description) ?? self.audioSession.outputVolume
             volumeView.setProgress(valueVolume, animated: true)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                if self.flagClearProgressView == .nowShaded {
+                    self.animateVolumeView(.nowClear)
+                }
+            }
+
         }
     }
 
