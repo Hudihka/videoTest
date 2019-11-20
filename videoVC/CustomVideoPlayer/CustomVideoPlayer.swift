@@ -33,7 +33,12 @@ class CustomVideoPlayer: UIViewController {
     var videoLayer: AVPlayerLayer?
     var player: AVPlayer?
 
-//    var timing: Any?
+
+    lazy var doubleGesters: UITapGestureRecognizer = {
+        let doubleGesters = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        doubleGesters.numberOfTapsRequired = 2
+        return doubleGesters
+    }()
 
     var urlVideo: URL {
         return videoManagerURL[self.counter]

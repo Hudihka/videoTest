@@ -101,20 +101,44 @@
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNl-Jv-UUc">
                                 <rect key="frame" x="0.0" y="93" width="375" height="296"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBh-cG-lb8">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="296"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="gh0-8P-mI5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="of7-33-jgk">
+                                        <rect key="frame" x="245" y="0.0" width="130" height="296"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="5ye-dp-gm4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="of7-33-jgk" firstAttribute="top" secondItem="BNl-Jv-UUc" secondAttribute="top" id="3TW-dc-a4K"/>
+                                    <constraint firstItem="gBh-cG-lb8" firstAttribute="top" secondItem="BNl-Jv-UUc" secondAttribute="top" id="MjQ-N1-zf7"/>
+                                    <constraint firstAttribute="bottom" secondItem="gBh-cG-lb8" secondAttribute="bottom" id="OqL-t9-b2t"/>
+                                    <constraint firstItem="gBh-cG-lb8" firstAttribute="leading" secondItem="BNl-Jv-UUc" secondAttribute="leading" id="SFj-XD-rRc"/>
+                                    <constraint firstAttribute="trailing" secondItem="of7-33-jgk" secondAttribute="trailing" id="jvj-11-QA5"/>
+                                    <constraint firstAttribute="bottom" secondItem="of7-33-jgk" secondAttribute="bottom" id="yFE-jE-6nV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.51463414919999995" green="0.5197295368" blue="0.5197295368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mvR-gh-zyq" firstAttribute="top" secondItem="BNl-Jv-UUc" secondAttribute="bottom" constant="108" id="169-eK-2kc"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" constant="29" id="1TB-Ci-31D"/>
+                            <constraint firstItem="tPm-OI-Qf3" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" constant="13" id="SnY-Cg-Kpu"/>
                             <constraint firstItem="mvR-gh-zyq" firstAttribute="centerX" secondItem="CEU-pC-sU7" secondAttribute="centerX" id="VpW-Zu-98Q"/>
                             <constraint firstItem="tPm-OI-Qf3" firstAttribute="centerX" secondItem="CEU-pC-sU7" secondAttribute="centerX" id="Xqr-xR-Zhl"/>
                             <constraint firstItem="tPm-OI-Qf3" firstAttribute="leading" secondItem="yUG-5o-HkL" secondAttribute="leadingMargin" constant="-8" id="eiv-rx-fdD"/>
                             <constraint firstItem="CEU-pC-sU7" firstAttribute="bottom" secondItem="mvR-gh-zyq" secondAttribute="bottom" constant="20" id="f6a-jz-Yr0"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="leading" secondItem="CEU-pC-sU7" secondAttribute="leading" id="fED-Dz-DBB"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="trailing" secondItem="CEU-pC-sU7" secondAttribute="trailing" id="oHP-ug-cbT"/>
-                            <constraint firstItem="BNl-Jv-UUc" firstAttribute="top" secondItem="tPm-OI-Qf3" secondAttribute="bottom" constant="10" id="rnU-AT-rMv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEU-pC-sU7"/>
                     </view>

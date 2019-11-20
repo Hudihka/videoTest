@@ -22,6 +22,7 @@
 		CE25CB2F23842382001016EE /* VideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB2E23842382001016EE /* VideoPlayerView.xib */; };
 		CE25CB31238423A0001016EE /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB30238423A0001016EE /* VideoPlayerView.swift */; };
 		CE9D182523852AF9008ECB35 /* ExtensionVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D182423852AF9008ECB35 /* ExtensionVolume.swift */; };
+		CE9D1827238556BF008ECB35 /* ExtensionGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D1826238556BF008ECB35 /* ExtensionGestures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CE25CB2E23842382001016EE /* VideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayerView.xib; sourceTree = "<group>"; };
 		CE25CB30238423A0001016EE /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		CE9D182423852AF9008ECB35 /* ExtensionVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionVolume.swift; sourceTree = "<group>"; };
+		CE9D1826238556BF008ECB35 /* ExtensionGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionGestures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				CE25CB26238411A0001016EE /* CustomVideoPlayer.swift */,
 				CE9D182423852AF9008ECB35 /* ExtensionVolume.swift */,
+				CE9D1826238556BF008ECB35 /* ExtensionGestures.swift */,
 			);
 			path = CustomVideoPlayer;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				CE25CB0C2383E0AC001016EE /* ViewController.swift in Sources */,
 				CE25CB27238411A0001016EE /* CustomVideoPlayer.swift in Sources */,
 				CE25CB0A2383E0AC001016EE /* AppDelegate.swift in Sources */,
+				CE9D1827238556BF008ECB35 /* ExtensionGestures.swift in Sources */,
 				CE9D182523852AF9008ECB35 /* ExtensionVolume.swift in Sources */,
 				CE25CB1C2383E296001016EE /* PlayerViewController.swift in Sources */,
 				CE25CB31238423A0001016EE /* VideoPlayerView.swift in Sources */,
