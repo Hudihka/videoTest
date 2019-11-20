@@ -23,6 +23,7 @@ class VideoPlayerView: UIView {
 
     weak var delegate: PlayerDelegate?
 
+
     override init (frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
