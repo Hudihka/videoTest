@@ -98,15 +98,22 @@
                                             <constraint firstAttribute="height" constant="150" id="TcC-Og-3Rs"/>
                                         </constraints>
                                     </view>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="teC-1o-vR5">
-                                        <rect key="frame" x="148" y="123" width="118" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </slider>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tPm-OI-Qf3">
+                                        <rect key="frame" x="8" y="8" width="359" height="6"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="6" id="ilR-QC-Wnj"/>
+                                        </constraints>
+                                        <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="trackTintColor" red="0.78563213832487311" green="0.78563213832487311" blue="0.78563213832487311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="mvR-gh-zyq" firstAttribute="centerX" secondItem="BNl-Jv-UUc" secondAttribute="centerX" id="0Zq-5f-FQH"/>
+                                    <constraint firstItem="tPm-OI-Qf3" firstAttribute="top" secondItem="BNl-Jv-UUc" secondAttribute="top" constant="8" id="A5g-g6-ea8"/>
+                                    <constraint firstAttribute="trailing" secondItem="tPm-OI-Qf3" secondAttribute="trailing" constant="8" id="Kpc-gD-K21"/>
                                     <constraint firstAttribute="bottom" secondItem="mvR-gh-zyq" secondAttribute="bottom" constant="15" id="MnG-Iz-YN3"/>
+                                    <constraint firstItem="tPm-OI-Qf3" firstAttribute="leading" secondItem="BNl-Jv-UUc" secondAttribute="leading" constant="8" id="ReH-38-8vu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -123,6 +130,7 @@
                     <connections>
                         <outlet property="bacgroundView" destination="BNl-Jv-UUc" id="pHc-nT-5QI"/>
                         <outlet property="videoView" destination="mvR-gh-zyq" id="fjD-Sb-8ih"/>
+                        <outlet property="volumeView" destination="tPm-OI-Qf3" id="kyD-qB-mCW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG2-LG-zIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
