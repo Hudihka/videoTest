@@ -29,7 +29,7 @@
                                     <color key="titleShadowColor" red="0.83529411760000005" green="0.35294117650000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eO8-37-LsO"/>
+                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SrJ-gh-0mu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpk-my-zYF">
@@ -42,10 +42,6 @@
                                 <state key="normal" title="Play index">
                                     <color key="titleShadowColor" red="0.83529411760000005" green="0.35294117650000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="playAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oYf-Gs-2bS"/>
-                                    <action selector="playVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bwD-iU-fQo"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyh-01-2cL">
                                 <rect key="frame" x="134.5" y="221" width="106" height="53"/>

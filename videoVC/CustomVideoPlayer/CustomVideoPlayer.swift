@@ -25,6 +25,7 @@ class CustomVideoPlayer: UIViewController {
     var time: Float = 0
     var flagUpdateProgressView = false
     var activeTimer = true
+    var firstPlay = true
 
     //видео
 
@@ -32,6 +33,8 @@ class CustomVideoPlayer: UIViewController {
 
     var videoLayer: AVPlayerLayer?
     var player: AVPlayer?
+
+//    var timing: Any?
 
     var urlVideo: URL {
         return videoManagerURL[self.counter]
@@ -56,10 +59,16 @@ class CustomVideoPlayer: UIViewController {
         listenVolumeButton()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        firstPlay = false
+    }
+
 
     func initVideoLauer(){
         if !videoManagerURL.isEmpty{
             self.player = AVPlayer(url: urlVideo)
+            player?.currentItem?.addObserver(self, forKeyPath: "duration", options: [.new, .initial], context: nil)
+            addTimeObserver()
 
             if let layerVideo = self.videoLayer {
                 layerVideo.player = self.player
@@ -78,14 +87,28 @@ class CustomVideoPlayer: UIViewController {
     }
 
 
-//    func hughhugyug(){
-//        let player = AVPlayer(url: url)
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = self.view.bounds
-//        self.view.layer.addSublayer(playerLayer)
-//        self.player = player
-//        player.play()
-//    }
+    func addTimeObserver() {
+        let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        let mainQueue = DispatchQueue.main
+        _ = player?.addPeriodicTimeObserver(forInterval: interval, queue: mainQueue, using: { [weak self] time in
+            guard let currentItem = self?.player?.currentItem else {return}
+
+                        print("max duration \(currentItem.duration.seconds)")
+                        print("seconds \(currentItem.currentTime().seconds)")
+
+            self?.videoView.updateUI(curentTime: currentItem.currentTime().seconds, maxTime: currentItem.duration.seconds)
+
+
+
+//            print("max duration \(currentItem.duration.seconds)")
+//            print("seconds \(currentItem.currentTime().seconds)")
+//            self?.timeSlider.maximumValue = Float(currentItem.duration.seconds)
+//            self?.timeSlider.minimumValue = 0
+//            self?.timeSlider.value = Float(currentItem.currentTime().seconds)
+//            self?.currentTimeLabel.text = self?.getTimeString(from: currentItem.currentTime())
+        })
+    }
+
 
 
 
@@ -121,9 +144,6 @@ extension CustomVideoPlayer: PlayerDelegate {
             self.counter += koef
 
             initVideoLauer()
-
-//            let url = videoManagerURL[counter]
-            //начать воспроизведение нового файла
 
         }
     }

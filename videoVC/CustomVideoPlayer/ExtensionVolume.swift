@@ -94,18 +94,20 @@ extension CustomVideoPlayer {
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 
-        if !flagUpdateProgressView {
-            if self.time == 0 {
-                if timer == nil {
-                    self.startTimer()
+        if !firstPlay{
+            if !flagUpdateProgressView {
+                if self.time == 0 {
+                    if timer == nil {
+                        self.startTimer()
+                    }
+
+                    self.activeTimer = true
+                    self.time = 0
+
+                    animateVolumeView(false)
+                } else {
+                    self.time = 0
                 }
-
-                self.activeTimer = true
-                self.time = 0
-
-                animateVolumeView(false)
-            } else {
-                self.time = 0
             }
         }
 
