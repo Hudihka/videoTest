@@ -19,6 +19,10 @@ class CustomVideoPlayer: UIViewController {
 
     @IBOutlet weak var volumeView: UIProgressView!
 
+    @IBOutlet weak var minus10Sekonds: UIView!
+    @IBOutlet weak var plus10Sekonds: UIView!
+
+
 
     //громкость
     var timer: Timer? = nil
@@ -34,12 +38,6 @@ class CustomVideoPlayer: UIViewController {
     var player: AVPlayer?
 
 
-    lazy var doubleGesters: UITapGestureRecognizer = {
-        let doubleGesters = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
-        doubleGesters.numberOfTapsRequired = 2
-        return doubleGesters
-    }()
-
     var urlVideo: URL {
         return videoManagerURL[self.counter]
     }
@@ -52,6 +50,8 @@ class CustomVideoPlayer: UIViewController {
         initVideoLauer()
 
         videoView.delegate = self
+
+        addGestures()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -156,19 +156,9 @@ extension CustomVideoPlayer: PlayerDelegate {
 
         let newTime = Float(duration.value) * value
 
-        print(value)
-        print(newTime)
-
-
         let time: CMTime = CMTimeMake(value: Int64(newTime), timescale: 1000)
 
         player.seek(to: time)
-
-
-//        if newTime < (CMTimeGetSeconds(duration) - 5.0) {
-//            let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
-//            player.seek(to: time)
-//        }
 
     }
 

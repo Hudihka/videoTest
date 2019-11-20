@@ -88,24 +88,20 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBh-cG-lb8">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="296"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="gh0-8P-mI5"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="of7-33-jgk">
                                         <rect key="frame" x="245" y="0.0" width="130" height="296"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="5ye-dp-gm4"/>
-                                        </constraints>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="of7-33-jgk" firstAttribute="leading" secondItem="gBh-cG-lb8" secondAttribute="trailing" constant="115" id="33u-aC-IOI"/>
                                     <constraint firstItem="of7-33-jgk" firstAttribute="top" secondItem="BNl-Jv-UUc" secondAttribute="top" id="3TW-dc-a4K"/>
                                     <constraint firstItem="gBh-cG-lb8" firstAttribute="top" secondItem="BNl-Jv-UUc" secondAttribute="top" id="MjQ-N1-zf7"/>
                                     <constraint firstAttribute="bottom" secondItem="gBh-cG-lb8" secondAttribute="bottom" id="OqL-t9-b2t"/>
+                                    <constraint firstItem="gBh-cG-lb8" firstAttribute="width" secondItem="of7-33-jgk" secondAttribute="width" id="P5r-LE-1j4"/>
                                     <constraint firstItem="gBh-cG-lb8" firstAttribute="leading" secondItem="BNl-Jv-UUc" secondAttribute="leading" id="SFj-XD-rRc"/>
                                     <constraint firstAttribute="trailing" secondItem="of7-33-jgk" secondAttribute="trailing" id="jvj-11-QA5"/>
                                     <constraint firstAttribute="bottom" secondItem="of7-33-jgk" secondAttribute="bottom" id="yFE-jE-6nV"/>
@@ -167,6 +163,8 @@
                     <navigationItem key="navigationItem" id="adT-aD-hUZ"/>
                     <connections>
                         <outlet property="bacgroundView" destination="BNl-Jv-UUc" id="pHc-nT-5QI"/>
+                        <outlet property="minus10Sekonds" destination="gBh-cG-lb8" id="Nb9-3H-oW0"/>
+                        <outlet property="plus10Sekonds" destination="of7-33-jgk" id="cZu-oL-f0e"/>
                         <outlet property="videoView" destination="mvR-gh-zyq" id="fjD-Sb-8ih"/>
                         <outlet property="volumeView" destination="tPm-OI-Qf3" id="kyD-qB-mCW"/>
                     </connections>
