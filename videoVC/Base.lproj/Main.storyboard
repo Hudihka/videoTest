@@ -83,22 +83,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvR-gh-zyq" customClass="VideoPlayerView" customModule="videoVC" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="497" width="270" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="270" id="30t-g0-Foa"/>
-                                    <constraint firstAttribute="height" constant="150" id="TcC-Og-3Rs"/>
-                                </constraints>
-                            </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tPm-OI-Qf3">
-                                <rect key="frame" x="8" y="77" width="359" height="6"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="6" id="ilR-QC-Wnj"/>
-                                </constraints>
-                                <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="trackTintColor" red="0.78563213832487311" green="0.78563213832487311" blue="0.78563213832487311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNl-Jv-UUc">
                                 <rect key="frame" x="0.0" y="93" width="375" height="296"/>
                                 <subviews>
@@ -127,11 +111,29 @@
                                     <constraint firstAttribute="bottom" secondItem="of7-33-jgk" secondAttribute="bottom" id="yFE-jE-6nV"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tPm-OI-Qf3">
+                                <rect key="frame" x="8" y="77" width="359" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="ilR-QC-Wnj"/>
+                                </constraints>
+                                <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="trackTintColor" red="0.78563213832487311" green="0.78563213832487311" blue="0.78563213832487311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvR-gh-zyq" customClass="VideoPlayerView" customModule="videoVC" customModuleProvider="target">
+                                <rect key="frame" x="52.5" y="497" width="270" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="30t-g0-Foa"/>
+                                    <constraint firstAttribute="height" constant="150" id="TcC-Og-3Rs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.51463414919999995" green="0.5197295368" blue="0.5197295368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mvR-gh-zyq" firstAttribute="top" secondItem="BNl-Jv-UUc" secondAttribute="bottom" constant="108" id="169-eK-2kc"/>
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" constant="29" id="1TB-Ci-31D"/>
+                            <constraint firstItem="BNl-Jv-UUc" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" id="6xP-mg-9Ke"/>
+                            <constraint firstAttribute="bottom" secondItem="BNl-Jv-UUc" secondAttribute="bottom" id="Kju-eA-cPg"/>
                             <constraint firstItem="tPm-OI-Qf3" firstAttribute="top" secondItem="CEU-pC-sU7" secondAttribute="top" constant="13" id="SnY-Cg-Kpu"/>
                             <constraint firstItem="mvR-gh-zyq" firstAttribute="centerX" secondItem="CEU-pC-sU7" secondAttribute="centerX" id="VpW-Zu-98Q"/>
                             <constraint firstItem="tPm-OI-Qf3" firstAttribute="centerX" secondItem="CEU-pC-sU7" secondAttribute="centerX" id="Xqr-xR-Zhl"/>
@@ -141,6 +143,26 @@
                             <constraint firstItem="BNl-Jv-UUc" firstAttribute="trailing" secondItem="CEU-pC-sU7" secondAttribute="trailing" id="oHP-ug-cbT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEU-pC-sU7"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1TB-Ci-31D"/>
+                                <exclude reference="6xP-mg-9Ke"/>
+                                <exclude reference="Kju-eA-cPg"/>
+                                <exclude reference="169-eK-2kc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="6xP-mg-9Ke"/>
+                                <include reference="Kju-eA-cPg"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="1TB-Ci-31D"/>
+                                <include reference="169-eK-2kc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="adT-aD-hUZ"/>
                     <connections>
@@ -151,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG2-LG-zIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1235.5322338830586" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bcw-rd-bB1">
