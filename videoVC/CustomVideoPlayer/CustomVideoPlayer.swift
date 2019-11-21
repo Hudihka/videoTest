@@ -22,8 +22,6 @@ class CustomVideoPlayer: UIViewController {
     @IBOutlet weak var minus10Sekonds: UIView!
     @IBOutlet weak var plus10Sekonds: UIView!
 
-
-
     //громкость
     var timer: Timer? = nil
     var time: Float = 0
@@ -33,9 +31,20 @@ class CustomVideoPlayer: UIViewController {
     //видео
 
     var counter = 0
-
     var videoLayer: AVPlayerLayer?
     var player: AVPlayer?
+
+
+    var sizeLayer: CGRect {
+        let portraitOrientation = UIDevice.current.orientation.isPortrait
+
+        let point = portraitOrientation ? CGPoint(x: 0.0, y: 93) : CGPoint.zero
+        let size = portraitOrientation ? CGSize(width: SupportClass.Dimensions.wDdevice, height: SupportClass.Dimensions.wDdevice)
+                                       : CGSize(width: SupportClass.Dimensions.hDdevice, height: SupportClass.Dimensions.wDdevice)
+
+        return CGRect(origin: point, size: size)
+    }
+
 
 
     var urlVideo: URL {
@@ -45,6 +54,10 @@ class CustomVideoPlayer: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        bacgroundView.frame = self.sizeLayer
+//        videoLayer?.frame = CGRect(origin: CGPoint.zero, size: sizeLayer.size)
+//        minusOrPlusFrame()
+
         addClearSlider()
 
         initVideoLauer()
@@ -52,16 +65,35 @@ class CustomVideoPlayer: UIViewController {
         videoView.delegate = self
 
         addGestures()
+
+        //сообщает что большеустройство повернуто
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(rotated),
+                                               name: UIDevice.orientationDidChangeNotification,
+                                               object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         audioSession.removeObserver(self, forKeyPath: "outputVolume")
         timer?.invalidate()
+
+
+        if (self.isMovingFromParent) {
+            UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         listenVolumeButton()
+
+        let value = UIInterfaceOrientationMask.all.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+
+        bacgroundView.frame = self.sizeLayer
+        videoLayer?.frame = CGRect(origin: CGPoint.zero, size: sizeLayer.size)
+        minusOrPlusFrame()
     }
+
 
 
 
@@ -77,7 +109,7 @@ class CustomVideoPlayer: UIViewController {
             } else {
 
                 self.videoLayer = AVPlayerLayer(player: player)
-                videoLayer?.frame = CGRect(origin: CGPoint.zero, size: bacgroundView.frame.size)
+                videoLayer?.frame = CGRect(origin: CGPoint.zero, size: sizeLayer.size)
 
                 if let videoLayer = videoLayer{
                     self.bacgroundView.layer.addSublayer(videoLayer)
@@ -112,9 +144,37 @@ class CustomVideoPlayer: UIViewController {
     }
 
 
+    //MARK: - Two orientation
+
+    @objc func canRotate () -> Void {}//благодаря этому селектору вращается этот экран
 
 
+    @objc func rotated() {
+        bacgroundView.frame = self.sizeLayer
+        videoLayer?.frame = CGRect(origin: CGPoint.zero, size: sizeLayer.size)
+        minusOrPlusFrame()
 
+
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+        } else {
+            print("Portrait")
+        }
+
+    }
+
+    private func minusOrPlusFrame(){
+
+        let sizeWidth = self.sizeLayer.size.width * 2/5
+        let sizeHeight = self.sizeLayer.size.height
+
+        let originMunus = CGPoint.zero
+        let originPlus = CGPoint(x: self.sizeLayer.size.width * 3/5, y: 0)
+
+        self.minus10Sekonds.frame = CGRect(origin: originMunus, size: CGSize(width: sizeWidth, height: sizeHeight))
+        self.plus10Sekonds.frame = CGRect(origin: originPlus, size: CGSize(width: sizeWidth, height: sizeHeight))
+
+    }
 
 
     deinit {
@@ -148,8 +208,6 @@ extension CustomVideoPlayer: PlayerDelegate {
     }
 
     func slider(_ value: Float) {
-
-        print("движение")
 
         guard let player = self.player,
               let duration = player.currentItem?.duration else {return}

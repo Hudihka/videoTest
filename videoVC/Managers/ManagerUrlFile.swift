@@ -15,7 +15,7 @@ class ManagerUrlFile: NSObject{
 
     var URLFile: [URL] {
 
-        let arrayName = ["guano", "toniRayt", "plazma"]
+        let arrayName = ["toniRayt", "guano", "plazma"]
         var arrayUrl = [URL]()
 
         for obj in arrayName {

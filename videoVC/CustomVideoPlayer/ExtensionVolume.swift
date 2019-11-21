@@ -83,7 +83,6 @@ extension CustomVideoPlayer {
         do{
             try audioSession.setActive(true)
             let vol = audioSession.outputVolume
-            print(vol.description) //gets initial volume
         }
         catch{
             print("Error info: \(error)")

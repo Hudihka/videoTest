@@ -31,6 +31,14 @@ class ViewController: UIViewController {
 
     }
 
+//    func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+//        return UIInterfaceOrientation.portrait;
+//    }
+
+//    override var shouldAutorotate: Bool {
+//        return false
+//    }
+
 
 }
 
