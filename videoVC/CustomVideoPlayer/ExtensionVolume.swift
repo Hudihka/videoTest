@@ -18,31 +18,6 @@ extension CustomVideoPlayer {
         return AVAudioSession.sharedInstance()
     }
 
-    private func startTimer() {
-        self.timer = Timer.scheduledTimer(timeInterval: 1,
-                                          target: self,
-                                          selector: #selector(CustomVideoPlayer.actionTimer),
-                                          userInfo: nil,
-                                          repeats: true)
-    }
-
-
-    @objc func actionTimer() {
-        if !activeTimer{
-            return
-        }
-
-
-        self.time += 1
-
-        print(time)
-
-        if self.time == 3 {
-            animateVolumeView(true)
-        }
-    }
-
-
 
    func addClearSlider(){
         let volumeViewClear = MPVolumeView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -54,17 +29,12 @@ extension CustomVideoPlayer {
     }
 
     private func animateVolumeView(_ clear: Bool){
-        flagUpdateProgressView = true
 
         UIView.animate(withDuration: 0.2, animations: {
             self.colorProgressView(clear)
         }) { (coml) in
             if coml {
-                self.flagUpdateProgressView = false
-                if clear {
-                    self.activeTimer = false
-                    self.time = 0
-                }
+                //
             }
         }
     }
@@ -93,21 +63,17 @@ extension CustomVideoPlayer {
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 
-            if !flagUpdateProgressView {
-                if self.time == 0 {
-                    if timer == nil {
-                        self.startTimer()
-                    }
 
-                    self.activeTimer = true
-                    self.time = 0
 
-                    animateVolumeView(false)
-                } else {
-                    self.time = 0
-                }
+        print("старт анимация счейчас счетчик равен \(self.counterUpdateVolume)")
+
+        if self.updateVolume {
+            self.counterUpdateVolume += 1
+
+            if self.counterUpdateVolume == 1{
+                animateVolumeView(false)
             }
-        
+        }
 
 
         if keyPath == "outputVolume"{
@@ -116,6 +82,19 @@ extension CustomVideoPlayer {
             let valueVolume = Float(volume.description) ?? self.audioSession.outputVolume
             volumeView.setProgress(valueVolume, animated: true)
 
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                print("счейчас счетчик равен \(self.counterUpdateVolume)")
+
+                if self.counterUpdateVolume == 1 {
+                    self.animateVolumeView(true)
+                    self.counterUpdateVolume = 0
+                } else if self.counterUpdateVolume > 0{
+                    self.counterUpdateVolume -= 1
+                }
+            }
+
+            //убираем анимац через диспатч задержки
         }
     }
 

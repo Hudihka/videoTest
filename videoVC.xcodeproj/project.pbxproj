@@ -21,6 +21,7 @@
 		CE25CB2B23841BE4001016EE /* ManagerUrlFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB2A23841BE4001016EE /* ManagerUrlFile.swift */; };
 		CE25CB2F23842382001016EE /* VideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE25CB2E23842382001016EE /* VideoPlayerView.xib */; };
 		CE25CB31238423A0001016EE /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25CB30238423A0001016EE /* VideoPlayerView.swift */; };
+		CE4C5EF9238675A2003F5857 /* Renegades.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE4C5EF8238675A1003F5857 /* Renegades.mp4 */; };
 		CE9D182523852AF9008ECB35 /* ExtensionVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D182423852AF9008ECB35 /* ExtensionVolume.swift */; };
 		CE9D1827238556BF008ECB35 /* ExtensionGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D1826238556BF008ECB35 /* ExtensionGestures.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		CE25CB2A23841BE4001016EE /* ManagerUrlFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerUrlFile.swift; sourceTree = "<group>"; };
 		CE25CB2E23842382001016EE /* VideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoPlayerView.xib; sourceTree = "<group>"; };
 		CE25CB30238423A0001016EE /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		CE4C5EF8238675A1003F5857 /* Renegades.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Renegades.mp4; sourceTree = "<group>"; };
 		CE9D182423852AF9008ECB35 /* ExtensionVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionVolume.swift; sourceTree = "<group>"; };
 		CE9D1826238556BF008ECB35 /* ExtensionGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionGestures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 		CE25CAFD2383E0AC001016EE = {
 			isa = PBXGroup;
 			children = (
+				CE4C5EF8238675A1003F5857 /* Renegades.mp4 */,
 				CE25CB222383F7EB001016EE /* guano.mp4 */,
 				CE25CB232383F7EC001016EE /* toniRayt.mp4 */,
 				CE25CB202383EF0D001016EE /* plazma.mp4 */,
@@ -181,6 +184,7 @@
 			files = (
 				CE25CB142383E0AE001016EE /* LaunchScreen.storyboard in Resources */,
 				CE25CB112383E0AE001016EE /* Assets.xcassets in Resources */,
+				CE4C5EF9238675A2003F5857 /* Renegades.mp4 in Resources */,
 				CE25CB212383EF0E001016EE /* plazma.mp4 in Resources */,
 				CE25CB242383F7EC001016EE /* guano.mp4 in Resources */,
 				CE25CB252383F7EC001016EE /* toniRayt.mp4 in Resources */,

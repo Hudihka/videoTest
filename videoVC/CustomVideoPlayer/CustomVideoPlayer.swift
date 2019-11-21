@@ -23,10 +23,9 @@ class CustomVideoPlayer: UIViewController {
     @IBOutlet weak var plus10Sekonds: UIView!
 
     //громкость
-    var timer: Timer? = nil
-    var time: Float = 0
-    var flagUpdateProgressView = true
-    var activeTimer = true
+
+    var counterUpdateVolume = 0
+    var updateVolume = false
 
     //видео
 
@@ -36,7 +35,7 @@ class CustomVideoPlayer: UIViewController {
 
 
     var sizeLayer: CGRect {
-        let portraitOrientation = UIDevice.current.orientation.isPortrait
+        let portraitOrientation = UIDevice.current.orientation.isPortrait //переделать
 
         let point = portraitOrientation ? CGPoint(x: 0.0, y: 93) : CGPoint.zero
         let size = portraitOrientation ? CGSize(width: SupportClass.Dimensions.wDdevice, height: SupportClass.Dimensions.wDdevice)
@@ -53,10 +52,6 @@ class CustomVideoPlayer: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        bacgroundView.frame = self.sizeLayer
-//        videoLayer?.frame = CGRect(origin: CGPoint.zero, size: sizeLayer.size)
-//        minusOrPlusFrame()
 
         addClearSlider()
 
@@ -75,7 +70,6 @@ class CustomVideoPlayer: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         audioSession.removeObserver(self, forKeyPath: "outputVolume")
-        timer?.invalidate()
 
 
         if (self.isMovingFromParent) {
@@ -99,7 +93,7 @@ class CustomVideoPlayer: UIViewController {
 
     func initVideoLauer(){
         if !videoManagerURL.isEmpty{
-            flagUpdateProgressView = true
+            self.updateVolume = false
             self.player = AVPlayer(url: urlVideo)
             player?.currentItem?.addObserver(self, forKeyPath: "duration", options: [.new, .initial], context: nil)
             addTimeObserver()
@@ -119,7 +113,7 @@ class CustomVideoPlayer: UIViewController {
             self.player?.play()
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.flagUpdateProgressView = false
+                 self.updateVolume = true
             }
         }
     }
